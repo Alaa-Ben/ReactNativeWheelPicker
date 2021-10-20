@@ -14,7 +14,7 @@ const WheelPicker: React.FC<Props> = props => {
   const { data, onItemSelected, disabled, containerStyle, ...rest } = props;
   if (!data || data.length === 0) return null;
   return (
-    <View containerStyle={containerStyle} pointerEvents={disabled ? "none" : "auto"}>
+    <View style={containerStyle} pointerEvents={disabled ? "none" : "auto"}>
       <Picker
         data={data}
         onItemSelected={onItemSelected}
