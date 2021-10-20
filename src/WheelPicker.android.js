@@ -22,6 +22,7 @@ type Props = {
   backgroundColor?: string,
   onItemSelected?: number => void,
   disabled?: boolean,
+  containerStyle?: object
 }
 
 export default class WheelPicker extends React.Component<Props> {
@@ -39,9 +40,9 @@ export default class WheelPicker extends React.Component<Props> {
   }
 
   render() {
-    const { isCyclic, data } = this.props
+    const { isCyclic, data, containerStyle } = this.props
     return (
-      <View pointerEvents={this.props.disabled ? "none" : "auto"}>
+      <View style={containerStyle} pointerEvents={this.props.disabled ? "none" : "auto"}>
         <WheelPickerView
           {...this.props}
           isCyclic={data.length > 2 ? isCyclic : false}
